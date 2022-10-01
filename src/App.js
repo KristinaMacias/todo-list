@@ -8,9 +8,11 @@ function App() {
   // first thing is the variable for current state
   // second thing is the function to update current state
 
-  
+
   const [inputText, setInputText] = useState(""); //state expecting string
   const [todos, setTodos] = useState([]); //state expecting array of objects
+  const [currentTodo, setCurrentTodo] = useState({});
+  const [isEditing, setIsEditing] = useState(false);
 
   return (
     <div className="App">
@@ -23,10 +25,14 @@ function App() {
         todos={todos}
         setTodos={setTodos}
         setInputText={setInputText}
+        currentTodo={currentTodo}
+        setCurrentTodo={setCurrentTodo}
       />
-      <TodoList 
+      <TodoList
         todos={todos}
         setTodos={setTodos}
+        isEditing={isEditing}
+        setIsEditing={setIsEditing}
       />
     </div>
   );
